@@ -8,16 +8,16 @@ import Header from './components/Header'
 import withUrlSync from './hocs/withUrlSync'
 import { APP_ID, API_KEY } from './utils/config'
 
-const App = props => {
+const App = ({ children, createURL, onSearchStateChange, searchState }) => {
   return (
     <div className="app">
       <InstantSearch
         appId={APP_ID}
         apiKey={API_KEY}
         indexName="songs"
-        searchState={props.searchState}
-        createURL={props.createURL}
-        onSearchStateChange={props.onSearchStateChange}
+        searchState={searchState}
+        createURL={createURL}
+        onSearchStateChange={onSearchStateChange}
       >
         <Configure hitsPerPage={10} />
         <Header />
