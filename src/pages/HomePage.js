@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Icon from '../components/Icon'
 import Playlist from '../components/Playlist'
 
 const HomePage = () => {

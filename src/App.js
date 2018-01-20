@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-instantsearch-theme-algolia/style.scss';
 import { InstantSearch,
   Configure
 } from 'react-instantsearch/dom';

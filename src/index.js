@@ -2,11 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader';
 
-import './styles/index.scss'
-import './utils/styles'
-
-import registerServiceWorker from './utils/registerServiceWorker'
 import Root from './Root'
+import './styles/index.scss'
+import registerServiceWorker from './utils/registerServiceWorker'
+import './utils/styles'
 
 ReactDOM.render(<Root />, document.getElementById('root'))
 if (module.hot) {

@@ -1,23 +1,19 @@
 import React from 'react'
 import { connectSearchBox } from 'react-instantsearch/connectors';
 
-const SearchBox = connectSearchBox(({ currentRefinement, refine }) => (
-  <div className="searchbox-container">
-    <div className="input-group">
-      <input
-        type="text"
-        value={currentRefinement}
-        onChange={e => refine(e.target.value)}
-        autoComplete="off"
-        className="form-control"
-      />
-      <span className="input-group-btn">
-        <button className="btn btn-default">
-          <i className="fa fa-search" />
-        </button>
-      </span>
-    </div>
-  </div>
-));
+import Icon from './Icon'
 
-export default SearchBox
+const SearchBox = ({ currentRefinement, refine }) => (
+  <div className="search-box col-6">
+    <input type="text"
+      value={currentRefinement}
+      onChange={e => refine(e.target.value)}
+      autoComplete="off"
+    />
+    <button className="button button--alive">
+      <Icon icon='search' />
+    </button>
+  </div>
+);
+
+export default connectSearchBox(SearchBox)
