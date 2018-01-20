@@ -77,6 +77,9 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
+        // Secrets
+        ALGOLIA_APP_ID: '6XP67XXQSE',
+        ALGOLIA_API_KEY: 'a1d50f77d134f38ce00b1094b4b8f657'
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin

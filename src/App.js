@@ -5,14 +5,14 @@ import { InstantSearch,
 
 import Header from './components/Header'
 import withUrlSync from './hocs/withUrlSync'
-import { APP_ID, API_KEY } from './utils/config'
+const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = process.env
 
 const App = ({ children, createURL, onSearchStateChange, searchState }) => {
   return (
     <div className="app">
       <InstantSearch
-        appId={APP_ID}
-        apiKey={API_KEY}
+        appId={ALGOLIA_APP_ID}
+        apiKey={ALGOLIA_API_KEY}
         indexName="songs"
         searchState={searchState}
         createURL={createURL}
