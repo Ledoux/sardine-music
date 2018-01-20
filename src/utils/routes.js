@@ -25,7 +25,8 @@ const routes = [
     path: '/:indexName/:filters',
     render: ({ match: { params: { filters, indexName } } }) => (
       <main className="page">
-        <Pick configure={{ filters: filters.split('_').slice(1).join('_') }} indexName={indexName} />
+        <Pick configure={{ filters: filters.split('_').slice(1).join('_') }}
+          indexName={indexName} />
         <Explore configure={{ filters }}
           indexName='songs'
           ItemComponent={SongItem}

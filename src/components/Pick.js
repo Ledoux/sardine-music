@@ -9,9 +9,8 @@ import ItemsComponentByIndexName from '../items'
 const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = process.env
 
 const Pick = ({ configure, indexName }) => {
-  console.log('configure', configure, indexName)
   return (
-    <div>
+    <div className='pick col-7 mx-auto mt3 p2 mb2'>
       <InstantSearch
         appId={ALGOLIA_APP_ID}
         apiKey={ALGOLIA_API_KEY}

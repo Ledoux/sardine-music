@@ -6,6 +6,7 @@ import { Configure,
 } from 'react-instantsearch/dom';
 
 import SearchBox from '../components/SearchBox'
+import Item from '../components/Item'
 import withUrlSync from '../hocs/withUrlSync'
 import ItemsComponentByIndexName from '../items'
 
@@ -18,6 +19,7 @@ const Explore = ({ configure,
   searchState,
   slug
 }) => {
+  const ItemComponent = ItemsComponentByIndexName[indexName]
   return (
     <div className='col-6 mx-auto'>
       <InstantSearch
@@ -33,7 +35,11 @@ const Explore = ({ configure,
           <SearchBox />
         </div>
         <article>
-          <Hits hitComponent={ItemsComponentByIndexName[indexName]} />
+          <Hits hitComponent={props => (
+            <Item>
+              <ItemComponent {...props} />
+            </Item>
+          )} />
         </article>
       </InstantSearch>
     </div>

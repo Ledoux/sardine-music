@@ -6,22 +6,19 @@ class ArtistItem extends Component {
   render () {
     const { hit: { name, slug, thumbnailUrl } } = this.props
     return (
-      <div className="mb2">
+      <Link href={`/artists/artist_slug:${slug}`}>
         <div className="artist-item clearfix">
-          <div className="col sm-col-3">
+          <div className="sm-col sm-col-3">
             <img alt="cover"
               className="artist-item__image"
               src={thumbnailUrl}
             />
           </div>
-          <div className="col sm-col-9 p2">
-            <Link href={`/artists/artist_slug:${slug}`}>
+          <div className="h2 sm-col sm-col-9 p2">
               {name}
-            </Link>
           </div>
         </div>
-        <div className="sep" />
-      </div>
+      </Link>
     );
   }
 }
