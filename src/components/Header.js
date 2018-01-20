@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react"
 
-import Hamburger from './Hamburger'
-import SearchBox from './SearchBox'
+import Hamburger from "./Hamburger"
+import SearchBox from "./SearchBox"
 
 const Header = () => (
-  <header className="header flex items-center justify-around" >
-    <Hamburger className='hamburger mr1' />
+  <header className="header flex flex-start items-center" >
+    <Hamburger className="hamburger ml1" />
+    <div className="flex-auto" />
     <SearchBox />
-    <div>
+    <div className="flex-auto" />
+    <div className="mr2">
       My App
     </div>
   </header>
