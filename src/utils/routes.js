@@ -3,6 +3,7 @@ import { Redirect } from 'react-router'
 
 import Explore from '../components/Explore'
 import Pick from '../components/Pick'
+import Player from '../components/Player'
 import SongItem from '../items/SongItem'
 
 const routes = [
@@ -16,6 +17,7 @@ const routes = [
     path: '/:indexName',
     render: ({ match: { params: { indexName } } }) => (
       <main className="page">
+        { indexName === 'songs' && <Player extraClass='mt3' /> }
         <Explore indexName={indexName} />
       </main>
     )
@@ -27,6 +29,7 @@ const routes = [
       <main className="page">
         <Pick configure={{ filters: `slug:${filters.split(':').slice(1).join(':')}` }}
           indexName={indexName} />
+        <Player />
         <Explore configure={{ filters }}
           indexName='songs'
           ItemComponent={SongItem}

@@ -5,7 +5,7 @@ const updateAfter = 700;
 const searchStateToUrl = searchState =>
   searchState ? `${window.location.pathname}?${qs.stringify(searchState)}` : '';
 
-const withUrlSync = App =>
+const withUrlSync = WrappedComponent =>
   class urlSync extends Component {
     constructor() {
       super();
@@ -29,8 +29,7 @@ const withUrlSync = App =>
 
     render() {
       return (
-        <App
-          {...this.props}
+        <WrappedComponent {...this.props}
           searchState={this.state.searchState}
           onSearchStateChange={this.onSearchStateChange}
           createURL={searchStateToUrl}

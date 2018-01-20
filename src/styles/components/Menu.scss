@@ -1,9 +1,9 @@
 .menu {
   $menu-width: 20%;
   background-color: black;
-  bottom: 0;
   color: white;
   left: -$menu-width;
+  height: 110%;
   position: absolute;
   top: $header-height;
   transition: all 0.25s ease-out;
