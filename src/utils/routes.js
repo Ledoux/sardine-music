@@ -24,12 +24,10 @@ const routes = [
   },
   {
     exact: true,
-    path: '/:indexName/:slug',
-    render: ({ match: { params: { indexName, slug } } }) => (
+    path: '/:indexName/:filters',
+    render: ({ match: { params: { filters, indexName } } }) => (
       <main className="page">
-        <Explore configure={{
-          filters: `${indexName}_slugs:${slug}` 
-        }}
+        <Explore configure={{ filters }}
           indexName='songs'
           ItemComponent={SongItem}
         />

@@ -7,7 +7,7 @@ class PlaylistItem extends Component {
     const { hit: { name, slug } } = this.props
     return (
       <div className="playlist-item">
-        <Link href={`/playlists/${slug}`}>
+        <Link href={`/playlists/playlists_slugs:${slug}`}>
           {name}
         </Link>
         <div className="sep" />

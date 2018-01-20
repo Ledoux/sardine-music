@@ -18,7 +18,6 @@ const Explore = ({ configure,
   searchState,
   slug
 }) => {
-  console.log('configure', configure, indexName)
   return (
     <div className='col-6 mx-auto'>
       <InstantSearch
@@ -30,7 +29,7 @@ const Explore = ({ configure,
         onSearchStateChange={onSearchStateChange}
       >
         <Configure {...configure} />
-        <div className="col-6 mx-auto mt2 mb2">
+        <div className="col-6 mx-auto mt2 mb3">
           <SearchBox />
         </div>
         <article>
