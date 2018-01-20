@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Link from './Link'
+import Link from '../components/Link'
 
 class PlaylistItem extends Component {
   render () {

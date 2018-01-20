@@ -1,17 +1,16 @@
 import React from 'react'
 
 import Explore from '../components/Explore'
-import SongItem from '../components/SongItem'
 
-const PlaylistPage = ({ slug }) => {
+const SlugPage = ({ filters, indexName, ItemComponent }) => {
   return (
     <main className="page">
       <Explore configure={{ filters: `playlist_slugs:${slug}` }}
-        indexName="songs"
-        ItemComponent={SongItem}
+        indexName='songs'
+        ItemComponent={ItemComponent}
       />
     </main>
   )
 }
 
-export default PlaylistPage
+export default SlugPage

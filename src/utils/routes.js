@@ -1,10 +1,9 @@
 import React from 'react'
 import { Redirect } from 'react-router'
 
-import ArtistsPage from '../pages/ArtistsPage'
-import PlaylistPage from '../pages/PlaylistPage'
-import PlaylistsPage from '../pages/PlaylistsPage'
-import SongsPage from '../pages/SongsPage'
+import ListPage from '../components/ListPage'
+import ItemsComponentByIndexName from '../items'
+// { filters: `playlist_slugs:${slug}` }
 
 const routes = [
   {
@@ -12,18 +11,22 @@ const routes = [
     path: '/',
     render: () => <Redirect to="/playlists" />
   },
+  /*
   {
     exact: true,
     label: 'Artists',
     path: '/artists',
     render: () => <ArtistsPage />
   },
+  */
   {
     exact: true,
-    label: 'Playlists',
-    path: '/playlists',
-    render: () => <PlaylistsPage />
+    path: '/:indexName',
+    render: ({ match: { params: { indexName } } }) =>
+      <ListPage indexName={indexName}
+        ItemComponent={ItemsComponentByIndexName[indexName]} />
   },
+  /*
   {
     exact: true,
     label: 'Songs',
@@ -32,9 +35,15 @@ const routes = [
   },
   {
     exact: true,
+    path: '/artists/:slug',
+    render: ({ match: { params: { slug } } }) => <PlaylistPage slug={slug} />
+  },
+  {
+    exact: true,
     path: '/playlists/:slug',
     render: ({ match: { params: { slug } } }) => <PlaylistPage slug={slug} />
   }
+  */
 ]
 
 export default routes

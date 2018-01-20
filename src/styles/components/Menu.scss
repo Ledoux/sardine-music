@@ -16,8 +16,13 @@
       color: white;
     }
     transition: all 0.5s ease-out;
+    $padding-left: 0.5rem;
     &:hover {
-      padding-left: 0.5rem;
+      padding-left: $padding-left;
+    }
+    &--active {
+      color: $light-blue;
+      padding-left: $padding-left;
     }
   }
 }

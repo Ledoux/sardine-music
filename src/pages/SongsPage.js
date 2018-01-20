@@ -6,7 +6,7 @@ import PlaylistsList from '../components/PlaylistsList'
 const SongsPage = () => {
   return (
     <main className="page">
-      <Explore ListComponent={PlaylistsList} />
+      <Explore indexName='' ListComponent={PlaylistsList} />
     </main>
   )
 }
