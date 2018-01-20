@@ -18,6 +18,7 @@ const Explore = ({ configure,
   searchState,
   slug
 }) => {
+  console.log('configure', configure, indexName)
   return (
     <div className='col-6 mx-auto'>
       <InstantSearch

@@ -5,8 +5,7 @@ const links = [
   },
   {
     indexName: 'playlists',
-    label: 'Playlists',
-    path: '/'
+    label: 'Playlists'
   },
   {
     indexName: 'songs',

@@ -7,18 +7,15 @@ import { compose } from 'redux'
 import Link from './Link'
 import links from '../utils/links'
 
-const Menu = ({
-  isNavigationActive,
-  match
-}) => {
-  console.log('match', window.location.pathname)
+const Menu = ({ isNavigationActive }) => {
   return (
     <div className={classnames('menu p3', { 'menu--active': isNavigationActive })}>
       {
         links.map(({ indexName, label, path }, index) => (
           <div className='menu__link mb2' key={index}>
-            <Link className={classnames('link h2', {
-              'menu__link--active': match.path === (path || `/${indexName}`) })}
+            <Link className={classnames('link menu__link', {
+                'menu__link--active': window.location.pathname === `/${indexName}`
+              })}
               href={`/${indexName}`}
             >
               {label}
@@ -31,6 +28,6 @@ const Menu = ({
 }
 
 export default compose(
-  connect(state => ({ isNavigationActive: state.navigation.isActive })),
-  withRouter
+  withRouter,
+  connect(state => ({ isNavigationActive: state.navigation.isActive }))
 )(Menu)

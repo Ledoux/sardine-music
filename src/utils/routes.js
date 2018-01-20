@@ -1,9 +1,9 @@
 import React from 'react'
 import { Redirect } from 'react-router'
 
-import ListPage from '../components/ListPage'
+import Explore from '../components/Explore'
 import ItemsComponentByIndexName from '../items'
-// { filters: `playlist_slugs:${slug}` }
+import SongItem from '../items/SongItem'
 
 const routes = [
   {
@@ -11,39 +11,31 @@ const routes = [
     path: '/',
     render: () => <Redirect to="/playlists" />
   },
-  /*
-  {
-    exact: true,
-    label: 'Artists',
-    path: '/artists',
-    render: () => <ArtistsPage />
-  },
-  */
   {
     exact: true,
     path: '/:indexName',
-    render: ({ match: { params: { indexName } } }) =>
-      <ListPage indexName={indexName}
-        ItemComponent={ItemsComponentByIndexName[indexName]} />
-  },
-  /*
-  {
-    exact: true,
-    label: 'Songs',
-    path: '/songs',
-    render: () => <SongsPage />
+    render: ({ match: { params: { indexName } } }) => (
+      <main className="page">
+        <Explore indexName={indexName}
+          ItemComponent={ItemsComponentByIndexName[indexName]}
+        />
+      </main>
+    )
   },
   {
     exact: true,
-    path: '/artists/:slug',
-    render: ({ match: { params: { slug } } }) => <PlaylistPage slug={slug} />
-  },
-  {
-    exact: true,
-    path: '/playlists/:slug',
-    render: ({ match: { params: { slug } } }) => <PlaylistPage slug={slug} />
+    path: '/:indexName/:slug',
+    render: ({ match: { params: { indexName, slug } } }) => (
+      <main className="page">
+        <Explore configure={{
+          filters: `${indexName}_slugs:${slug}` 
+        }}
+          indexName='songs'
+          ItemComponent={SongItem}
+        />
+      </main>
+    )
   }
-  */
 ]
 
 export default routes
