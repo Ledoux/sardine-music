@@ -3,8 +3,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 import App from './App'
-import HomePage from './pages/HomePage'
-import PlaylistPage from './pages/PlaylistPage'
+import routes from './utils/routes'
 import store from './utils/store'
 
 const Root = () => {
@@ -12,12 +11,7 @@ const Root = () => {
     <Provider store={store}>
       <BrowserRouter>
         <App>
-          <Route exact
-            path='/'
-            render={() => <HomePage />} />
-          <Route exact
-            path='/playlist'
-            render={() => <PlaylistPage />} />
+          { routes.map((route, index) => <Route key={index} {...route} />) }
         </App>
       </BrowserRouter>
     </Provider>

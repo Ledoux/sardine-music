@@ -1,6 +1,7 @@
 import React from 'react'
 import { InstantSearch,
-  Configure
+  Configure,
+  RefinementList
 } from 'react-instantsearch/dom';
 
 import SongsList from '../components/SongsList'
@@ -9,7 +10,7 @@ import withUrlSync from '../hocs/withUrlSync'
 
 const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = process.env
 
-const HomePage = ({ createURL, onSearchStateChange, searchState }) => {
+const PlaylistPage = ({ createURL, onSearchStateChange, searchState, slug }) => {
   return (
     <main className="page client-home-page">
       <div className='col-9 mx-auto'>
@@ -21,7 +22,9 @@ const HomePage = ({ createURL, onSearchStateChange, searchState }) => {
           createURL={createURL}
           onSearchStateChange={onSearchStateChange}
         >
-          <Configure hitsPerPage={10} />
+          <Configure filters={`playlist_slugs:${slug}`}
+            hitsPerPage={10}
+          />
           <div className="col-6 mx-auto mt2 mb2">
             <SearchBox />
           </div>
@@ -32,4 +35,4 @@ const HomePage = ({ createURL, onSearchStateChange, searchState }) => {
   )
 }
 
-export default withUrlSync(HomePage)
+export default withUrlSync(PlaylistPage)

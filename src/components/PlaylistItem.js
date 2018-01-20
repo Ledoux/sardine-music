@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const PlaylistItem = ({ hit }) => {
-  console.log('hit', hit)
-  return (
-    <div className="playlist-item">
-      playlist
-      <div className="sep" />
-    </div>
-  );
-};
+import Link from './Link'
+
+class PlaylistItem extends Component {
+  render () {
+    const { hit: { name, slug } } = this.props
+    return (
+      <div className="playlist-item">
+        <Link href={`/playlist/${slug}`}>
+          {name}
+        </Link>
+        <div className="sep" />
+      </div>
+    );
+  }
+}
 
 export default PlaylistItem

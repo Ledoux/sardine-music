@@ -1,0 +1,23 @@
+.menu {
+  $menu-width: 20%;
+  background-color: black;
+  bottom: 0;
+  color: white;
+  left: -$menu-width;
+  position: absolute;
+  top: $header-height;
+  transition: all 0.25s ease-out;
+  width: $menu-width;
+  &--active {
+    left: 0;
+  }
+  &__link {
+    a {
+      color: white;
+    }
+    transition: all 0.5s ease-out;
+    &:hover {
+      padding-left: 0.5rem;
+    }
+  }
+}

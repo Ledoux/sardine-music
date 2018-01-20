@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
+const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = require('../secret');
 
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve('./paths')];
@@ -78,8 +79,8 @@ function getClientEnvironment(publicUrl) {
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
         // Secrets
-        ALGOLIA_APP_ID: '6XP67XXQSE',
-        ALGOLIA_API_KEY: 'a1d50f77d134f38ce00b1094b4b8f657'
+        ALGOLIA_APP_ID,
+        ALGOLIA_API_KEY
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin
