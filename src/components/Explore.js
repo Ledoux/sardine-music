@@ -7,13 +7,13 @@ import { Configure,
 
 import SearchBox from '../components/SearchBox'
 import withUrlSync from '../hocs/withUrlSync'
+import ItemsComponentByIndexName from '../items'
 
 const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = process.env
 
 const Explore = ({ configure,
   createURL,
   indexName,
-  ItemComponent,
   onSearchStateChange,
   searchState,
   slug
@@ -33,7 +33,7 @@ const Explore = ({ configure,
           <SearchBox />
         </div>
         <article>
-          <Hits hitComponent={ItemComponent} />
+          <Hits hitComponent={ItemsComponentByIndexName[indexName]} />
         </article>
       </InstantSearch>
     </div>
@@ -47,8 +47,7 @@ Explore.defaultProps = {
 }
 
 Explore.propTypes = {
-  indexName: PropTypes.string.isRequired,
-  ItemComponent: PropTypes.func.isRequired
+  indexName: PropTypes.string.isRequired
 }
 
 export default withUrlSync(Explore)

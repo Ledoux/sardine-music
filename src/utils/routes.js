@@ -2,7 +2,7 @@ import React from 'react'
 import { Redirect } from 'react-router'
 
 import Explore from '../components/Explore'
-import ItemsComponentByIndexName from '../items'
+import Pick from '../components/Pick'
 import SongItem from '../items/SongItem'
 
 const routes = [
@@ -16,9 +16,7 @@ const routes = [
     path: '/:indexName',
     render: ({ match: { params: { indexName } } }) => (
       <main className="page">
-        <Explore indexName={indexName}
-          ItemComponent={ItemsComponentByIndexName[indexName]}
-        />
+        <Explore indexName={indexName} />
       </main>
     )
   },
@@ -27,6 +25,7 @@ const routes = [
     path: '/:indexName/:filters',
     render: ({ match: { params: { filters, indexName } } }) => (
       <main className="page">
+        <Pick configure={{ filters: filters.split('_').slice(1).join('_') }} indexName={indexName} />
         <Explore configure={{ filters }}
           indexName='songs'
           ItemComponent={SongItem}
