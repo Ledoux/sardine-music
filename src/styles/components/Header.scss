@@ -5,4 +5,12 @@
   position: fixed;
   top: 0;
   width: 100%;
+  svg {
+    fill: white;
+    height: 50px;
+    width: 50px;
+  }
+  &__title {
+    color: white;
+  }
 }

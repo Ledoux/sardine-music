@@ -4,8 +4,8 @@ import { connectSearchBox } from 'react-instantsearch/connectors';
 import Icon from './Icon'
 
 const SearchBox = ({ currentRefinement, refine }) => (
-  <div className="search-box col-6 flex items-center">
-    <button className="button button--inversed button--alive">
+  <div className="search-box flex items-center">
+    <button className="button button--inversed button--alive ml1">
       <Icon icon='search' />
     </button>
     <input className="input"

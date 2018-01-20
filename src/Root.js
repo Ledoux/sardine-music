@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import App from './App'
 import HomePage from './pages/HomePage'
+import PlaylistPage from './pages/PlaylistPage'
 import store from './utils/store'
 
 const Root = () => {
@@ -14,6 +15,9 @@ const Root = () => {
           <Route exact
             path='/'
             render={() => <HomePage />} />
+          <Route exact
+            path='/playlist'
+            render={() => <PlaylistPage />} />
         </App>
       </BrowserRouter>
     </Provider>

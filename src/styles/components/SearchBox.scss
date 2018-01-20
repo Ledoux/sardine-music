@@ -1,5 +1,6 @@
 .search-box {
   background-color: white;
+  border: $border;
   border-radius: $border-radius;
   height: calc(#{$header-height}/1.5);
   padding: 1px;
@@ -8,7 +9,7 @@
     border-radius: $border-radius;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    font-size: 12px;
+    font-size: 16px;
     height: 100%;
     width: 100%;
   }

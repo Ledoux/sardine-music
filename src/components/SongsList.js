@@ -6,10 +6,10 @@ import { Hits } from 'react-instantsearch/dom';
 
 import SongItem from './SongItem'
 
-const Playlist = connectSearchBox(() => (
+const SongsList = connectSearchBox(() => (
   <article>
     <Hits hitComponent={SongItem} />
   </article>
 ));
 
-export default Playlist
+export default SongsList

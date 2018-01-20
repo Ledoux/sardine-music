@@ -19,6 +19,7 @@ They might well be outsourced to an external stylesheet of course.
 -->
 
 <style type="text/css">
+	.svg-fish-skeleton-dims { width: 163.839px; height: 163.839px; }
 	.svg-search-dims { width: 512px; height: 512px; }
 </style>
 
@@ -44,6 +45,7 @@ for further details on how to create this embeddable sprite variant.
 
 <svg width="0" height="0" style="position:absolute">
 	<defs>
+		<svg viewBox="0 0 4335 4335" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" id="fish-skeleton" xmlns="http://www.w3.org/2000/svg"><defs><style/></defs><g id="aLayer_x0020_1"><path class="afil0" d="M3249 1894c-93 85-69 228 53 282 288 59 212-424-53-282zm883 417c0 54-212 209-268 240-15 8-24 13-38 21-18 11-26 12-46 21-65 31-228 99-291 99-275 0-520-505-556-714-5-30-7-58-11-82-25-151 31-261 150-356 144-116 421 6 549 98 143 104 325 309 418 471 19 33 93 163 93 203zM2633 1990c224-5 128-84 195 203-322 0-100-20-254 330-48 109-158 287-271 313 85-178 135-415 135-618 0-42-113-25-195-25-19 82-16 203-86 320-41 69-114 184-202 205 71-134 110-330 110-516h-229c-2 88-37 180-70 243-30 55-94 140-158 155 61-116 85-257 85-398h-262c-2 101-67 230-161 279 3-36 59-144 59-279h-186c-6 75-48 132-102 161 5-59 34-82 34-161-161 0-162 17-169-68 46 0 124-13 169-17-2-88-56-155-59-195 69 16 127 101 127 186 72 0 108-8 178-8 0-148-79-235-93-296 60 14 107 60 139 106 27 40 59 124 64 182l262-25c-6-13-30-144-54-208-26-67-54-120-90-173 144 3 276 242 279 373 77-6 138-17 229-17-10-118-62-261-114-369-18-38-43-73-64-105 135 3 260 173 308 301 12 31 16 40 25 76 7 27 12 60 22 80 55-5 127-17 186-17-3-36-20-120-31-155-17-57-27-97-47-148-33-86-122-237-126-255 201 47 341 253 390 440 7 25 16 83 25 102zM830 2269c-27 18-46 42-70 66-28 27-38 46-63 72-24 25-43 43-68 68-30 30-43 41-76 68-64 54-236 232-307 251 90-187 154-462 124-666-26-181-92-298-160-450l-65-146c50 12 81 36 119 59 102 61 354 252 459 337 84 69 69 39 78 99l30 241z"/></g></svg>
 		<svg viewBox="0 0 512 512" id="search" xmlns="http://www.w3.org/2000/svg"><path d="M497.913 497.913c-18.782 18.782-49.225 18.782-68.008 0l-84.862-84.863c-34.889 22.382-76.13 35.717-120.659 35.717C100.469 448.767 0 348.312 0 224.383S100.469 0 224.384 0c123.931 0 224.384 100.452 224.384 224.383 0 44.514-13.352 85.771-35.718 120.676l84.863 84.863c18.782 18.782 18.782 49.209 0 67.991zM224.384 64.109c-88.511 0-160.274 71.747-160.274 160.273s71.764 160.274 160.274 160.274c88.525 0 160.273-71.748 160.273-160.274S312.909 64.109 224.384 64.109z"/></svg>
 	</defs>
 </svg>
@@ -75,6 +77,17 @@ embedded above. They may be styled via CSS.
 			<h3>A) Inline SVG with embedded sprite</h3>
 			<ul>
 
+				<li title="fish-skeleton">
+					<div class="icon-box">
+
+						<!-- fish-skeleton -->
+						<svg viewBox="0 0 163.839 163.839" class="svg-fish-skeleton-dims">
+							<use xlink:href="#fish-skeleton"></use>
+						</svg>
+
+					</div>
+					<h2>fish-skeleton</h2>
+				</li>
 				<li title="search">
 					<div class="icon-box">
 
@@ -113,7 +126,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Sat, 20 Jan 2018 00:19:21 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+			<p>Generated at Sat, 20 Jan 2018 01:50:26 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>

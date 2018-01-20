@@ -3,7 +3,7 @@ import { InstantSearch,
   Configure
 } from 'react-instantsearch/dom';
 
-import PlaylistsList from '../components/PlaylistsList'
+import SongsList from '../components/SongsList'
 import SearchBox from '../components/SearchBox'
 import withUrlSync from '../hocs/withUrlSync'
 
@@ -16,7 +16,7 @@ const HomePage = ({ createURL, onSearchStateChange, searchState }) => {
         <InstantSearch
           appId={ALGOLIA_APP_ID}
           apiKey={ALGOLIA_API_KEY}
-          indexName="playlists"
+          indexName="songs"
           searchState={searchState}
           createURL={createURL}
           onSearchStateChange={onSearchStateChange}
@@ -25,7 +25,7 @@ const HomePage = ({ createURL, onSearchStateChange, searchState }) => {
           <div className="col-6 mx-auto mt2 mb2">
             <SearchBox />
           </div>
-          <PlaylistsList />
+          <SongsList />
         </InstantSearch>
       </div>
     </main>
