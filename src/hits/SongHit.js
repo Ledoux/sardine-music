@@ -5,8 +5,8 @@ import { assignPlayer } from '../reducers/player'
 
 class SongHit extends Component {
   onClick = () => {
-    const { assignPlayer, url } = this.props
-    assignPlayer({ url })
+    const { assignPlayer, index } = this.props
+    assignPlayer({ songIndex: index })
   }
   render () {
     const { name } = this.props

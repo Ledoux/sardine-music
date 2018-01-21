@@ -3,12 +3,15 @@ import { Configure,
   InstantSearch
 } from 'react-instantsearch/dom';
 
-import Hits from './Hits'
+import Hit from './Hit'
 import HitComponentsByIndexName from '../hits'
 
 const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = process.env
 
-const Pick = ({ configure, indexName }) => {
+const Pick = ({ configure,
+  indexName,
+  onHitsChange
+}) => {
   const HitComponent = HitComponentsByIndexName[indexName]
   return (
     <div className='pick col-7 mx-auto mt3 p2 mb2'>
@@ -19,7 +22,10 @@ const Pick = ({ configure, indexName }) => {
       >
         <Configure {...configure} />
         <article>
-          <Hits HitComponent={HitComponent} />
+          <Hit indexName={indexName}
+            HitComponent={HitComponent}
+            onHitsChange={onHitsChange}
+          />
         </article>
       </InstantSearch>
     </div>

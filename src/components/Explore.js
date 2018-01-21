@@ -14,9 +14,11 @@ const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = process.env
 const Explore = ({ configure,
   createURL,
   indexName,
+  onHitsChange,
   onSearchStateChange,
   searchState,
-  slug
+  slug,
+  storeKey
 }) => {
   const HitComponent = HitComponentsByIndexName[indexName]
   return (
@@ -34,7 +36,11 @@ const Explore = ({ configure,
           <SearchBox />
         </div>
         <article>
-          <Hits HitComponent={HitComponent} />
+          <Hits indexName={indexName}
+            HitComponent={HitComponent}
+            onHitsChange={onHitsChange}
+            storeKey={storeKey}
+          />
         </article>
       </InstantSearch>
     </div>
