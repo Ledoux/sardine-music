@@ -4,7 +4,7 @@ import { Redirect } from 'react-router'
 import Explore from '../components/Explore'
 import Pick from '../components/Pick'
 import Player from '../components/Player'
-import SongItem from '../items/SongItem'
+import SongHit from '../hits/SongHit'
 
 const routes = [
   {
@@ -32,7 +32,7 @@ const routes = [
         <Player />
         <Explore configure={{ filters }}
           indexName='songs'
-          ItemComponent={SongItem}
+          HitComponent={SongHit}
         />
       </main>
     )

@@ -19,6 +19,4 @@ class Player extends Component {
   }
 }
 
-export default connect(
-  state => ({ url: state.player.url })
-)(Player)
+export default connect(state => ({ url: state.player.url }))(Player)

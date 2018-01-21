@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Configure,
-  Hits,
   InstantSearch
 } from 'react-instantsearch/dom';
 
+import Hits from '../components/Hits'
 import SearchBox from '../components/SearchBox'
-import Item from '../components/Item'
 import withUrlSync from '../hocs/withUrlSync'
-import ItemsComponentByIndexName from '../items'
+import HitComponentsByIndexName from '../hits'
 
 const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = process.env
 
@@ -19,7 +18,7 @@ const Explore = ({ configure,
   searchState,
   slug
 }) => {
-  const ItemComponent = ItemsComponentByIndexName[indexName]
+  const HitComponent = HitComponentsByIndexName[indexName]
   return (
     <div className='col-6 mx-auto'>
       <InstantSearch
@@ -35,11 +34,7 @@ const Explore = ({ configure,
           <SearchBox />
         </div>
         <article>
-          <Hits hitComponent={props => (
-            <Item>
-              <ItemComponent {...props} />
-            </Item>
-          )} />
+          <Hits HitComponent={HitComponent} />
         </article>
       </InstantSearch>
     </div>
