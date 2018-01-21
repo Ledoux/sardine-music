@@ -6,6 +6,16 @@ import { connect } from 'react-redux'
 import { assignPlayer, getPlayerSong } from '../reducers/player'
 
 class Player extends Component {
+  constructor () {
+    super()
+    this.state = { bufferSong: null }
+  }
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.song && this.state.bufferSong &&
+      nextProps.song.url !== this.state.bufferSong.url) {
+      this.setState({ bufferSong: nextProps.song })
+    }
+  }
   onEnded = () => {
     const { assignPlayer, songIndex, songsLength } = this.props
     if (songIndex < songsLength - 1) {
@@ -16,23 +26,32 @@ class Player extends Component {
     } else {
       // here we would need to find another playlist...
     }
+    this.setState({ bufferSong: null })
+  }
+  onPlay = () => {
+    this.setState({ bufferSong: this.props.song })
   }
   render () {
     const { extraClass, song } = this.props
-    console.log('song', song)
+    const { bufferSong } = this.state
+    const playerSong = bufferSong || song
+    const thumbnailUrl = (playerSong && playerSong.thumbnailUrl) ||
+      '/images/player.png'
+    const url = playerSong && playerSong.url
     return (
-      <div className={classnames('player col-6 mx-auto', {
+      <div className={classnames('player sm-col-6 mx-auto', {
         [extraClass]: extraClass
       })} style={{
-        backgroundImage: `url('${song && song.thumbnailUrl}')`,
+        backgroundImage: `url('${thumbnailUrl}')`,
         backgroundSize: '100%'
       }} >
         <ReactPlayer controls
-          playing={song && typeof song.url === 'string'}
+          playing={typeof url === 'string'}
           width='100%'
           height='100%'
           onEnded={this.onEnded}
-          url={song && song.url} />
+          onPlay={this.onPlay}
+          url={url} />
       </div>
     )
   }

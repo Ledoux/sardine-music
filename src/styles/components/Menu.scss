@@ -1,10 +1,9 @@
 .menu {
-  $menu-width: 20%;
   background-color: black;
   color: white;
   left: -$menu-width;
   height: 110%;
-  position: absolute;
+  position: fixed;
   top: $header-height;
   transition: all 0.25s ease-out;
   width: $menu-width;
@@ -13,11 +12,10 @@
   }
   &__link {
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     transition: padding-left 1s ease-out;
-    $padding-left: 0.5rem;
     &:hover {
-      padding-left: $padding-left;
+      padding-left: $menu-padding-left;
     }
     &--active {
       color: $light-blue;

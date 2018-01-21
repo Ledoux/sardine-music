@@ -2,6 +2,7 @@ import React from 'react'
 import { Redirect } from 'react-router'
 
 import Explore from '../components/Explore'
+import Page from '../components/Page'
 import Pick from '../components/Pick'
 import Player from '../components/Player'
 import SongHit from '../hits/SongHit'
@@ -16,10 +17,10 @@ const routes = [
     exact: true,
     path: '/:indexName',
     render: ({ match: { params: { indexName } } }) => (
-      <main className="page">
+      <Page>
         { indexName === 'songs' && <Player extraClass='mt3' /> }
         <Explore indexName={indexName} />
-      </main>
+      </Page>
     )
   },
   {
@@ -27,7 +28,7 @@ const routes = [
     path: '/:indexName/:slug',
     render: ({ match: { params: { indexName, slug } } }) => {
       return (
-        <main className="page">
+        <Page>
           <Pick configure={{ filters: `slug:${slug}` }}
             indexName={indexName} />
           <Player />
@@ -38,7 +39,7 @@ const routes = [
             indexName='songs'
             HitComponent={SongHit}
           />
-        </main>
+        </Page>
       )
     }
   }

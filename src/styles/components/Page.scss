@@ -1,0 +1,9 @@
+.page {
+  padding: 5px;
+  min-height: 100vh;
+  padding-top: 55px;
+  transition: padding-left 0.4s ease-out;
+  &--shift {
+    padding-left: $menu-width;
+  }
+}

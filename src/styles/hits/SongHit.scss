@@ -1,0 +1,13 @@
+.song-hit {
+  &__button {
+    &--active {
+      background-color: $light-blue;
+    }
+  }
+  &__name {
+    font-size: 1rem;
+    @media (min-width: $sm) {
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -22,7 +22,7 @@ const Explore = ({ configure,
 }) => {
   const HitComponent = HitComponentsByIndexName[indexName]
   return (
-    <div className='col-6 mx-auto'>
+    <div className='sm-col-10 mx-auto p1'>
       <InstantSearch
         appId={ALGOLIA_APP_ID}
         apiKey={ALGOLIA_API_KEY}
@@ -32,7 +32,7 @@ const Explore = ({ configure,
         onSearchStateChange={onSearchStateChange}
       >
         <Configure {...configure} />
-        <div className="col-6 mx-auto mt2 mb3">
+        <div className="sm-col-6 mx-auto mt2 mb3">
           <SearchBox />
         </div>
         <article>

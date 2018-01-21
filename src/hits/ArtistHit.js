@@ -8,13 +8,13 @@ class ArtistHit extends Component {
     return (
       <Link href={`/artists/${slug}`}>
         <div className="artist-hit clearfix">
-          <div className="sm-col sm-col-3">
+          <div className="sm-col sm-col-3 center">
             <img alt="cover"
               className="artist-hit__image"
               src={thumbnailUrl}
             />
           </div>
-          <div className="h2 sm-col sm-col-9 p2">
+          <div className="h2 sm-col sm-col-9 p2 center">
               {name}
           </div>
         </div>

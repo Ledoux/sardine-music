@@ -14,7 +14,7 @@ const Pick = ({ configure,
 }) => {
   const HitComponent = HitComponentsByIndexName[indexName]
   return (
-    <div className='pick col-7 mx-auto mt3 p2 mb2'>
+    <div className='pick col-10 sm-col-7 mx-auto mt3 p2 mb2'>
       <InstantSearch
         appId={ALGOLIA_APP_ID}
         apiKey={ALGOLIA_API_KEY}
