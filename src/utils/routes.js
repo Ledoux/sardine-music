@@ -24,18 +24,23 @@ const routes = [
   },
   {
     exact: true,
-    path: '/:indexName/:filters',
-    render: ({ match: { params: { filters, indexName } } }) => (
-      <main className="page">
-        <Pick configure={{ filters: `slug:${filters.split(':').slice(1).join(':')}` }}
-          indexName={indexName} />
-        <Player />
-        <Explore configure={{ filters }}
-          indexName='songs'
-          HitComponent={SongHit}
-        />
-      </main>
-    )
+    path: '/:indexName/:slug',
+    render: ({ match: { params: { indexName, slug } } }) => {
+      return (
+        <main className="page">
+          <Pick configure={{ filters: `slug:${slug}` }}
+            indexName={indexName} />
+          <Player />
+          <Explore configure={{ filters: indexName === 'artists'
+              ? `artist_slug:${slug}`
+              : `playlists_slugs:${slug}`
+            }}
+            indexName='songs'
+            HitComponent={SongHit}
+          />
+        </main>
+      )
+    }
   }
 ]
 

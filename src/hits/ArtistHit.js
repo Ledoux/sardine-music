@@ -6,7 +6,7 @@ class ArtistHit extends Component {
   render () {
     const { name, slug, thumbnailUrl } = this.props
     return (
-      <Link href={`/artists/artist_slug:${slug}`}>
+      <Link href={`/artists/${slug}`}>
         <div className="artist-hit clearfix">
           <div className="sm-col sm-col-3">
             <img alt="cover"

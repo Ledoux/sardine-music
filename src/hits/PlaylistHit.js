@@ -6,7 +6,7 @@ class PlaylistHit extends Component {
   render () {
     const { name, slug, thumbnailUrl } = this.props
     return (
-      <Link href={`/playlists/playlists_slugs:${slug}`}>
+      <Link href={`/playlists/${slug}`}>
         <div className="playlist-hit clearfix">
           <div className="sm-col sm-col-3">
             <img alt="cover"

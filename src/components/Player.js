@@ -13,14 +13,20 @@ class Player extends Component {
         () => assignPlayer({ songIndex: songIndex + 1 }),
         2000
       )
+    } else {
+      // here we would need to find another playlist...
     }
   }
   render () {
     const { extraClass, song } = this.props
+    console.log('song', song)
     return (
       <div className={classnames('player col-6 mx-auto', {
         [extraClass]: extraClass
-      })}>
+      })} style={{
+        backgroundImage: `url('${song && song.thumbnailUrl}')`,
+        backgroundSize: '100%'
+      }} >
         <ReactPlayer controls
           playing={song && typeof song.url === 'string'}
           width='100%'

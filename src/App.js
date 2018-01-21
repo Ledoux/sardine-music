@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './components/Header'
 import Menu from './components/Menu'
+import withPlayerNavigation from './hocs/withPlayerNavigation'
 
 const App = ({ children }) => {
   return (
@@ -13,4 +14,4 @@ const App = ({ children }) => {
   )
 }
 
-export default App
+export default withPlayerNavigation(App)
