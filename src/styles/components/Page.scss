@@ -4,6 +4,9 @@
   padding-top: 55px;
   transition: padding-left 0.4s ease-out;
   &--shift {
-    padding-left: $menu-width;
+    padding-left: $sm-menu-width;
+    @media (min-width: $md) {
+      padding-left: $md-menu-width;
+    }
   }
 }

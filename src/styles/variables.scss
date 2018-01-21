@@ -15,12 +15,8 @@ $box-shadow-hover: 0 0 10px rgba(0,0,0,0.4);
 $font-family: "Kreon", "Helvetica Neue", Arial, sans-serif;
 $header-height: 55px;
 $identity-color: black;
-$menu-width: 33%;
-@media (min-width: $sm) {
-  $menu-width: 20%;
-}
-$menu-padding-left: 0.25rem;
-@media(min-width: $md) {
-  $menu-padding-left: 0.5rem;
-}
+$sm-menu-width: 33%;
+$md-menu-width: 20%;
+$sm-menu-padding-left: 0.25rem;
+$md-menu-padding-left: 0.5rem;
 $opacity-transition: all 1s ease-out;

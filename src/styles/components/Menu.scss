@@ -1,12 +1,16 @@
 .menu {
   background-color: black;
   color: white;
-  left: -$menu-width;
+  left: -$sm-menu-width;
   height: 110%;
   position: fixed;
   top: $header-height;
   transition: all 0.25s ease-out;
-  width: $menu-width;
+  width: $sm-menu-width;
+  @media (min-width: $md) {
+    left: -$md-menu-width;
+    width: $md-menu-width;
+  }
   &--active {
     left: 0;
   }
@@ -14,8 +18,14 @@
     color: white;
     font-size: 16px;
     transition: padding-left 1s ease-out;
+    @media (min-width: $sm) {
+      font-size: 26px;
+    }
     &:hover {
-      padding-left: $menu-padding-left;
+      padding-left: $sm-menu-padding-left;
+      @media (min-width: $md) {
+        padding-left: $md-menu-padding-left;
+      }
     }
     &--active {
       color: $light-blue;
