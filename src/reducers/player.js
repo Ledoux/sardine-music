@@ -3,7 +3,7 @@ export const ASSIGN_PLAYER = 'ASSIGN_PLAYER '
 
 // INITIAL STATE
 const initialState = {
-  songIndex: null
+  song: null
 }
 
 // REDUCER
@@ -22,11 +22,11 @@ export function assignPlayer (patch) {
 }
 
 // SELECTOR
-export function getPlayerUrl (state) {
+export function getPlayerSong (state) {
   const songs = state.data.songs
   const songIndex = state.player.songIndex
   const song = songs && songs[songIndex]
-  return song && song.url
+  return song
 }
 
 // default
