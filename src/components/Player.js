@@ -39,7 +39,7 @@ class Player extends Component {
       '/images/player.png'
     const url = playerSong && playerSong.url
     return (
-      <div className={classnames('player sm-col-6 mx-auto', {
+      <div className={classnames('player col-10 sm-col-6 mx-auto', {
         [extraClass]: extraClass
       })} style={{
         backgroundImage: `url('${thumbnailUrl}')`,
@@ -47,8 +47,8 @@ class Player extends Component {
       }} >
         <ReactPlayer controls
           playing={typeof url === 'string'}
+          height='300px'
           width='100%'
-          height='100%'
           onEnded={this.onEnded}
           onPlay={this.onPlay}
           url={url} />

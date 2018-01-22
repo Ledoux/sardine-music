@@ -19,17 +19,22 @@ class SongHit extends Component {
     this.setState({ isSelected: true })
   }
   async componentWillMount () {
+    this._isMounted = true
     if (window.location.pathname !== '/artists') {
       const result = await algoliaClient.initIndex('artists')
         .search({ filters: `slug:${this.props.artist_slug}` })
       const artist = result.hits[0]
-      this.setState({ artist })
+      if (this._isMounted) {
+        this.setState({ artist })
+      }
     }
+  }
+  componentWillUnmount () {
+    this._isMounted = false
   }
   render () {
     const { isSelected, name } = this.props
     const { artist } = this.state
-    console.log('artist', artist)
     return (
       <div className={classnames("song-hit p2 flex items-center", {
         "song-hit--active": isSelected
@@ -41,7 +46,7 @@ class SongHit extends Component {
           >
         </button>
         <div className="h2 song-hit__name">
-          {name} {artist ? `(${artist.name})` : ''}
+          {name} <span className='song-hit__name__artist'> {artist ? `(${artist.name})` : ''} </span>
         </div>
       </div>
     );

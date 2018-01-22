@@ -32,7 +32,7 @@ const Explore = ({ configure,
         onSearchStateChange={onSearchStateChange}
       >
         <Configure {...configure} />
-        <div className="sm-col-6 mx-auto mt2 mb3">
+        <div className="px2 mt2 mb3">
           <SearchBox />
         </div>
         <article>

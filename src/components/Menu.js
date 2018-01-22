@@ -9,7 +9,7 @@ import links from '../utils/links'
 
 const Menu = ({ isNavigationActive }) => {
   return (
-    <div className={classnames('menu p3', { 'menu--active': isNavigationActive })}>
+    <div className={classnames('menu', { 'menu--active': isNavigationActive })}>
       {
         links.map(({ indexName, label, path }, index) => (
           <div className='menu__link mb2' key={index}>

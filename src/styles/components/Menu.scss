@@ -1,14 +1,21 @@
 .menu {
   background-color: black;
   color: white;
-  left: -$sm-menu-width;
+  left: -$mini-menu-width;
   height: 110%;
+  padding: 0.5rem;
   position: fixed;
   top: $header-height;
   transition: all 0.25s ease-out;
-  width: $sm-menu-width;
+  width: $mini-menu-width;
+  @media (min-width: $sm) {
+    left: -$sm-menu-width;
+    padding: 1rem;
+    width: $sm-menu-width;
+  }
   @media (min-width: $md) {
     left: -$md-menu-width;
+    padding: 1.5rem;
     width: $md-menu-width;
   }
   &--active {
@@ -22,7 +29,10 @@
       font-size: 26px;
     }
     &:hover {
-      padding-left: $sm-menu-padding-left;
+      padding-left: $mini-menu-padding-left;
+      @media (min-width: $sm) {
+        padding-left: $sm-menu-padding-left;
+      }
       @media (min-width: $md) {
         padding-left: $md-menu-padding-left;
       }

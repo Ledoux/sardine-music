@@ -9,5 +9,8 @@
     @media (min-width: $sm) {
       font-size: 1.5rem;
     }
+    &__artist {
+      color: $medium-grey;
+    }
   }
 }
