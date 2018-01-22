@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
-const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = require('../secret');
+const { ALGOLIA_APP_ID, ALGOLIA_API_KEY } = require('../src/utils/secret');
 
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve('./paths')];

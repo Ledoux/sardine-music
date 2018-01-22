@@ -34,7 +34,7 @@ const routes = [
           <Player />
           <Explore configure={{ filters: indexName === 'artists'
               ? `artist_slug:${slug}`
-              : `playlists_slugs:${slug}`
+              : `playlist_slugs:${slug}`
             }}
             indexName='songs'
             HitComponent={SongHit}
