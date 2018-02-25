@@ -32,12 +32,13 @@ class Player extends Component {
     this.setState({ bufferSong: this.props.song })
   }
   render () {
-    const { extraClass, song } = this.props
+    const { extraClass, greaterThanSmall, song } = this.props
     const { bufferSong } = this.state
     const playerSong = bufferSong || song
     const thumbnailUrl = (playerSong && playerSong.thumbnailUrl) ||
       '/images/player.png'
     const url = playerSong && playerSong.url
+    console.log('greaterThanSmall', greaterThanSmall)
     return (
       <div className={classnames('player col-10 sm-col-6 mx-auto', {
         [extraClass]: extraClass
@@ -59,6 +60,7 @@ class Player extends Component {
 
 export default connect(
   state => ({
+    greaterThanSmall: state.browser.greaterThan.small,
     song: getPlayerSong(state),
     songIndex: state.player.songIndex,
     songsLength: state.data.songs && state.data.songs.length

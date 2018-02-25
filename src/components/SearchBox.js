@@ -5,8 +5,8 @@ import Icon from './Icon'
 
 const SearchBox = ({ currentRefinement, refine }) => (
   <div className="search-box flex items-center">
-    <button className="button button--inversed button--alive ml1">
-      <Icon icon='search' />
+    <button className="button button--inversed button--alive ml2">
+      <Icon icon='algolia-mark-black' />
     </button>
     <input className="input"
       type="text"
